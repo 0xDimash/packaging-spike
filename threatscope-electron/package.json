@@ -1,0 +1,31 @@
+{
+  "name": "threatscope-electron",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Electron shell and packaging for the ThreatScope 3D frontend",
+  "main": "electron/main.cjs",
+  "productName": "ThreatScope",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/copy-frontend.mjs",
+    "electron": "npm run build && electron .",
+    "dist:linux": "npm run build && electron-builder --linux AppImage",
+    "dist:win-zip": "npm run build && electron-builder --win zip"
+  },
+  "build": {
+    "appId": "dev.dimash.threatscope",
+    "productName": "ThreatScope",
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    }
+  },
+  "devDependencies": {
+    "electron": "45.4.1",
+    "electron-builder": "26.18.0"
+  }
+}
