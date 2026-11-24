@@ -8,7 +8,13 @@ shell runs the WebGL cube in a Linux AppImage on this machine. The only open ite
 smoke test on a clean Windows 10 machine (revelcev). This branch is a spike: nothing merges, no
 binaries are committed, nothing is signed.
 
-Scratch repo: `git@github.com:0xDimash/packaging-spike.git`, branch `spike/electron-packaging`.
+## ThreatScope desktop build (moved here)
+
+The real Electron shell for ThreatScope now lives in [`threatscope-electron/`](threatscope-electron/).
+It consumes the built frontend from `0xDimash/threatscope` (no source is duplicated) and packages a
+Linux AppImage or Windows zip. See [its README](threatscope-electron/README.md) for commands.
+
+The rest of this document is the original throwaway cube spike, kept as evidence for the decision.
 
 ## Versions used
 
