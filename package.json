@@ -1,0 +1,41 @@
+{
+  "name": "packaging-spike",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Throwaway spike: can Vite + Three.js ship as a Windows exe?",
+  "main": "electron/main.cjs",
+  "productName": "PackSpike",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "electron": "electron .",
+    "dist:linux": "npm run build && electron-builder --linux AppImage",
+    "dist:win-zip": "npm run build && electron-builder --win zip",
+    "dist:win-nsis": "npm run build && electron-builder --win nsis",
+    "dist:mac-zip": "npm run build && electron-builder --mac zip"
+  },
+  "build": {
+    "appId": "dev.dimash.packspike",
+    "productName": "PackSpike",
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    }
+  },
+  "devDependencies": {
+    "@types/three": "^0.187.0",
+    "electron": "^45.4.1",
+    "electron-builder": "^26.18.0",
+    "typescript": "~5.6.2",
+    "vite": "^5.4.10"
+  },
+  "dependencies": {
+    "three": "^0.187.0"
+  }
+}
